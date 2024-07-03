@@ -6,6 +6,8 @@ import impermeabilizante from "./img/impermeabilizante.jpg";
 import argamassa from "./img/argamassa.jpg";
 import whats from "./img/whatsapp.png";
 
+const number: ImportMetaEnv = import.meta.env.VITE_WHATS_NUMBER;
+
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="container">
       <img src="${logo}" class="logo w-2/5 mx-auto rounded-2xl shadow-2xl" alt="Vite logo" width="200" heigth="205"/>
@@ -32,7 +34,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
      <div class="w-full h-20 p-4 mt-6 flex justify-between bg-[#032116] rounded-3xl relative">
       <p class="text-2xl text-[#cfede2] align-bottom">Faça seu pedido pelo WhatsAPP</p>
       <a
-          href="https://web.whatsapp.com/send?phone=5585999954767"
+          href="https://web.whatsapp.com/send?phone=${number}"
           target="_blank"
           class="absolute -bottom-8 right-0"
           ><img src="${whats}" alt="link whatsapp" width="70" height="70"/>
