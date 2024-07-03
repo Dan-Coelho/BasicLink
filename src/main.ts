@@ -5,8 +5,10 @@ import telha from "./img/telhas.jpg";
 import impermeabilizante from "./img/impermeabilizante.jpg";
 import argamassa from "./img/argamassa.jpg";
 import whats from "./img/whatsapp.png";
+import marca from "./img/nova_marca.svg";
 
 const number: ImportMetaEnv = import.meta.env.VITE_WHATS_NUMBER;
+const numberDev: ImportMetaEnv = import.meta.env.VITE_WHATS_NUMBERDEV;
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="container">
@@ -34,11 +36,22 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
      <div class="w-full h-20 p-4 mt-6 flex justify-between bg-[#032116] rounded-3xl relative">
       <p class="text-2xl text-[#cfede2] align-bottom">Faça seu pedido pelo WhatsAPP</p>
       <a
-          href="https://web.whatsapp.com/send?phone=${number}"
+          /* href="https://web.whatsapp.com/send?phone=${number}" */
+          href="https://wa.me/${number}?text=Olá, gostaria de mais informações."
           target="_blank"
           class="absolute -bottom-8 right-0"
           ><img src="${whats}" alt="link whatsapp" width="70" height="70"/>
         </a>
     </div>
+    <footer class="container flex justify-center w-full h-10 mt-10 bg-[#fa7d20] rounded-2xl relative" >
+      <img src="${marca}" alt="desenvolvedor" width="50" height="50"/>
+      <a
+          /* href="https://web.whatsapp.com/send?phone=${numberDev}" */
+          href="https://wa.me/${numberDev}?text=Olá, gostaria de mais informações."
+          target="_blank"
+          class="place-items-center"
+          ><img src="${whats}" alt="link whatsapp" width="15" height="15"/>
+      </a>
+    </footer>
   </div>
 `;
